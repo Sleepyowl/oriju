@@ -1,0 +1,33 @@
+{
+  "name": "oriju",
+  "version": "0.0.1-alpha.0",
+  "description": "helper functions to fold (reduce) trees",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/typescript/bin/tsc && node ./node_modules/mocha/bin/_mocha dist",
+    "prepublish": "./node_modules/.bin/typings install && node ./node_modules/typescript/bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sleepyowl/oriju.git"
+  },
+  "keywords": [
+    "functional programming",
+    "reduce",
+    "fold",
+    "trees"
+  ],
+  "author": "Dmitry Soloviev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sleepyowl/oriju/issues"
+  },
+  "homepage": "https://github.com/Sleepyowl/oriju#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "tslint": "^3.11.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  }
+}
