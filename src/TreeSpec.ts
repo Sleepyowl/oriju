@@ -33,13 +33,13 @@ describe("Tree", function () {
 
             // translating it to elasticsearch QueryDSL
             const result =
-                Tree.from(filter, "filters").fold<any, any>(
-                    (acc, node: any) => ({
+                Tree.from<any, any>(filter, x => x.filters).fold<any>(
+                    (acc, node) => ({
                         bool: {
                             [node.logic == "or" ? "should" : "must"]: acc
                         }
                     }),
-                    (leaf: any) => ({
+                    (leaf) => ({
                         // for simplicity, assuming operator to be always "eq"
                         term: { [leaf.field]: leaf.value }
                     })
@@ -51,8 +51,8 @@ describe("Tree", function () {
                         {
                             bool: {
                                 should: [
-                                    {term: {position: "QA Engineer"}},
-                                    {term: {position: "UX Engineer"}}
+                                    { term: { position: "QA Engineer" } },
+                                    { term: { position: "UX Engineer" } }
                                 ]
                             }
                         },

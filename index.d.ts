@@ -1,1 +1,1 @@
-/// <reference path="./dist/Tree.d.ts" />
+export {Tree} from "./dist/Tree";
