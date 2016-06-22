@@ -1,2 +1,2 @@
-var Tree = require("./dist/Tree");
-exports.Tree = Tree;
+var dist = require("./dist");
+exports.Tree = dist.Tree;
